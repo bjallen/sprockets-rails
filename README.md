@@ -82,6 +82,8 @@ When enabled, fingerprints will be added to asset filenames.
 
 Enable expanded asset debugging mode. Individual files will be served to make referencing filenames in the web console easier. This feature will eventually be deprecated and replaced by Source Maps in Sprockets 3.x.
 
+If `config.asset.debug` is true and `config.assets.compile` is false, assets will not be resolved by Sprockets but instead will use the default Rails public path resolver.
+
 **`config.assets.compile`**
 
 Enables Sprockets compile environment. If disabled, `Rails.application.assets` will be `nil` to prevent inadvertent compilation calls. View helpers will depend on assets being precompiled to `public/assets` in order to link to them. Initializers expecting `Rails.application.assets` during boot should be accessing the environment in a `config.assets.configure` block. See below.
